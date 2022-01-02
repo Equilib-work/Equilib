@@ -1,12 +1,27 @@
-<div class="shadow-lg rounded-2xl bg-white dark:bg-gray-700 w-full ">
-    <p class="font-bold text-md p-4 text-black dark:text-white">
-        My Tasks
-        <span class="text-sm text-gray-500 dark:text-gray-300 dark:text-white ml-2">
-            (<%= current_user.ongoing_tasks.count %>)
-        </span>
-    </p>
-    <ul>
-      <%= render @tasks %>
-    </ul>
+<div data-controller="tasks" class="">
+  <div class="shadow-lg rounded-2xl bg-white dark:bg-gray-700 w-full ">
+      <p class="font-bold text-md p-4 text-black dark:text-white">
+          Ongoing Tasks
+          <span class="text-sm text-gray-500 dark:text-gray-300 dark:text-white ml-2">
+              (<%= current_user.active_tasks.count %>)
+          </span>
+      </p>
+      <ul>
+        <%= render current_user.active_tasks %>
+      </ul>
+  </div>
+  <hr/>
+  <%= link_to "New task", new_task_path %>
+  <hr/>
+  <div class="shadow-lg rounded-2xl bg-white dark:bg-gray-700 w-full ">
+      <p class="font-bold text-md p-4 text-black dark:text-white">
+          Completed Tasks
+          <span class="text-sm text-gray-500 dark:text-gray-300 dark:text-white ml-2">
+            (<%= current_user.completed_tasks.count %>)
+          </span>
+      </p>
+      <ul>
+        <%= render current_user.completed_tasks %>
+      </ul>
+  </div>
 </div>
-<%= link_to "New task", new_task_path %>
