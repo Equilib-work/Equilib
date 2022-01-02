@@ -25,7 +25,18 @@ class User < ApplicationRecord
   has_many :task_users
   has_many :tasks, through: :task_users
 
-  def ongoing_tasks
-    tasks.where(status: :active).order("deadline ASC")
+  # return all active tasks assigned to this user
+  def active_tasks
+    tasks.active
+  end
+
+  # return all completed tasks assigned to this user
+  def completed_tasks
+    tasks.completed
+  end
+
+  # return all archived tasks assigned to this user
+  def archived_tasks
+    tasks.archived
   end
 end
