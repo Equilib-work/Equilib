@@ -23,7 +23,7 @@ jobs:
             allow-failures: true
     steps:
       - name: Ruby version
-        uses: ruby/setup-ruby@v1 
+        uses: ruby/setup-ruby@v3.0.2
         
       - name: Checkout code
         uses: actions/checkout@v2
