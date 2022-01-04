@@ -29,7 +29,6 @@ jobs:
         uses: ruby/setup-ruby@v1
         with: 
           ruby-version: '3.0.2'
-          bundler-cache: true
       # Add or Replace any other security checks here
       - name: Run security checks
         run: |
