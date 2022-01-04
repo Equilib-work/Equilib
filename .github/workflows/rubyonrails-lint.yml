@@ -33,7 +33,7 @@ jobs:
       - name: Run security checks
         run: |
           gem install bundler-audit
-          gem install ruby-audit
+          gem install ruby_audit
           bundle exec bundle-audit --update
           bin/brakeman -q -w2
       # Add or Replace any other Linters here
