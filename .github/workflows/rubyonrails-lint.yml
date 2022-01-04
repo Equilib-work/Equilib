@@ -36,7 +36,7 @@ jobs:
           gem install ruby_audit
           bundle install
           bundle exec bundle-audit --update
-          bin/brakeman -q -w2
+      # bin/brakeman -q -w2
       # Add or Replace any other Linters here
       - name: Run linters
         run: |
