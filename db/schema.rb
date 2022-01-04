@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_01_140512) do
+ActiveRecord::Schema.define(version: 2022_01_04_070428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,19 @@ ActiveRecord::Schema.define(version: 2022_01_01_140512) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tags_tasks", id: false, force: :cascade do |t|
+    t.bigint "tag_id", null: false
+    t.bigint "task_id", null: false
+    t.index ["tag_id"], name: "index_tags_tasks_on_tag_id"
+    t.index ["task_id"], name: "index_tags_tasks_on_task_id"
+  end
+
   create_table "task_users", force: :cascade do |t|
     t.bigint "task_id", null: false
     t.bigint "user_id", null: false
@@ -49,6 +62,13 @@ ActiveRecord::Schema.define(version: 2022_01_01_140512) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.date "deadline"
+    t.bigint "parent_task_id"
+    t.string "repeats"
+    t.integer "repeats_every"
+    t.string "repeats_on"
+    t.string "difficulty_level"
+    t.string "icon"
+    t.text "links"
   end
 
   create_table "users", force: :cascade do |t|

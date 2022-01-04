@@ -2,14 +2,22 @@
 #
 # Table name: tasks
 #
-#  id          :bigint           not null, primary key
-#  deadline    :date
-#  description :text
-#  status      :string           default(NULL)
-#  title       :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id               :integer          not null, primary key
+#  title            :string
+#  description      :text
+#  status           :string           default("0")
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  deadline         :date
+#  parent_task_id   :integer
+#  repeats          :string
+#  repeats_every    :integer
+#  repeats_on       :string
+#  difficulty_level :string
+#  icon             :string
+#  links            :text
 #
+
 class Task < ApplicationRecord
   # Make title required
   validates :title, presence: true

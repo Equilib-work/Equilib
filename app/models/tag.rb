@@ -1,15 +1,12 @@
 # == Schema Information
 #
-# Table name: orders
+# Table name: tags
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  address    :text
-#  email      :string
-#  pay_type   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Order < ApplicationRecord
+class Tag < ApplicationRecord
 end
