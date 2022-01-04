@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_04_070428) do
+ActiveRecord::Schema.define(version: 2022_01_04_072842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,19 @@ ActiveRecord::Schema.define(version: 2022_01_04_070428) do
     t.string "pay_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "places_tasks", id: false, force: :cascade do |t|
+    t.bigint "place_id", null: false
+    t.bigint "task_id", null: false
+    t.index ["place_id"], name: "index_places_tasks_on_place_id"
+    t.index ["task_id"], name: "index_places_tasks_on_task_id"
   end
 
   create_table "tags", force: :cascade do |t|
