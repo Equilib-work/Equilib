@@ -29,6 +29,9 @@ gem "jbuilder", "~> 2.11"
 
 gem "honeybadger"
 
+gem 'bundler-audit'
+gem 'ruby_audit'
+
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
 
