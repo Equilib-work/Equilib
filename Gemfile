@@ -78,6 +78,7 @@ group :test do
   gem "capybara", ">= 3.26"
   gem "selenium-webdriver", ">= 4.0.0"
   gem "webdrivers"
+  gem 'rspec-rails'
 end
 
 gem 'devise', git: 'https://github.com/heartcombo/devise', branch: 'main'
