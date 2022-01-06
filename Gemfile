@@ -79,7 +79,9 @@ group :test do
   gem "selenium-webdriver", ">= 4.0.0"
   gem "webdrivers"
   gem 'rspec-rails'
+  gem 'factory_bot', '~> 4.8', '>= 4.8.2'
 end
+
 
 gem 'devise', git: 'https://github.com/heartcombo/devise', branch: 'main'
 gem 'cssbundling-rails'
