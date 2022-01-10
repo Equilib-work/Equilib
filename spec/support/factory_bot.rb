@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 RSpec.configure do |config|
     config.include FactoryBot::Syntax::Methods
   
@@ -5,3 +6,19 @@ RSpec.configure do |config|
       FactoryBot.find_definitions
     end
 end
+=======
+require 'factory_bot'
+
+RSpec.configure do |config|
+    config.include FactoryBot::Syntax::Methods
+end
+
+# RSpec without Rails
+RSpec.configure do |config|
+    config.include FactoryBot::Syntax::Methods
+
+    config.before(:suite) do
+        FactoryBot.find_definitions
+    end
+end
+>>>>>>> feature/task_test2

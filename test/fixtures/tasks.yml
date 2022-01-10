@@ -21,9 +21,9 @@
 one:
   title: MyString
   description: MyText
-  status: MyString
+  status: 0
 
 two:
   title: MyString
   description: MyText
-  status: MyString
+  status: 1
