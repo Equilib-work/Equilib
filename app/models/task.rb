@@ -26,7 +26,7 @@ class Task < ApplicationRecord
 
   has_many :task_users
   has_many :users, through: :task_users
-
+ 
   # return all completed tasks
   scope :completed, -> { where(status: :completed) }
 end
