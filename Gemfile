@@ -80,6 +80,7 @@ group :test do
   gem "webdrivers"
   gem 'rspec-rails'
   gem 'factory_bot', '~> 4.8', '>= 4.8.2'
+  #gem 'minitest-rails-capybara', '~> 3.0', '>= 3.0.1'
 end
 
 
